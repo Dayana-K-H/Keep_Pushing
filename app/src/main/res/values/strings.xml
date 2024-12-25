@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Keep Pushing</string>
+    <string name="find_jackpot">Temukan Jackpot</string>
+    <string name="number">1</string>
+    <string name="odd">Odd</string>
+    <string name="even">Even</string>
+    <string name="start">Mulai Lagi</string>
+</resources>
