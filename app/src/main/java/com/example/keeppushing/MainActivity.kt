@@ -1,5 +1,6 @@
 package com.example.keeppushing
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
@@ -14,10 +15,13 @@ class MainActivity : AppCompatActivity() {
     private var number = 1
     private var probability = 0.01
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.textViewProbability.text = getString(R.string.probability) + probability.toString()
         binding.buttonStartAgain.visibility = View.GONE
 
         binding.buttonJackpot.setOnClickListener {
@@ -39,12 +43,15 @@ class MainActivity : AppCompatActivity() {
         resetGame()
     }
         }
+
+    @SuppressLint("SetTextI18n")
     private fun resetGame() {
     number = 1
     probability = 0.01
     binding.textViewNumber.text = number.toString()
     binding.textViewCategory.text = getString(R.string.odd)
     binding.buttonJackpot.isEnabled = true
+    binding.textViewProbability.text = getString(R.string.probability) + probability.toString()
     binding.buttonStartAgain.visibility = View.GONE
 }
 
@@ -54,6 +61,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun increaseJackpotProbability() {
         probability = (probability + 0.01).coerceAtMost(0.05)
+        binding.textViewProbability.text = getString(R.string.probability) + probability.toString()
     }
 
     private fun showJackpotDialog(jackpotValue: Int) {

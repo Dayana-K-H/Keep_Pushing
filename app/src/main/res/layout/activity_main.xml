@@ -30,15 +30,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewNumber" />
 
+    <TextView
+        android:id="@+id/textViewProbability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/probability"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewCategory" />
+
     <Button
         android:id="@+id/buttonJackpot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/find_jackpot"
-        app:layout_constraintEnd_toEndOf="@+id/textViewCategory"
-        app:layout_constraintStart_toStartOf="@+id/textViewCategory"
-        app:layout_constraintTop_toBottomOf="@id/textViewCategory" />
+        app:layout_constraintEnd_toEndOf="@+id/textViewProbability"
+        app:layout_constraintStart_toStartOf="@+id/textViewProbability"
+        app:layout_constraintTop_toBottomOf="@id/textViewProbability" />
 
     <Button
         android:id="@+id/buttonStartAgain"
